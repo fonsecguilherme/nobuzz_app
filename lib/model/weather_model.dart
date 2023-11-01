@@ -217,29 +217,12 @@ class Info {
   }
 
   String conversion(dynamic value) {
-    if (value.runtimeType == int) {
+    if (value == null) {
+      return '';
+    } else if (value.runtimeType == int) {
       return value.toString();
     } else {
       return value;
     }
-  }
-}
-
-class Noite {
-  String? tempo;
-  int? graus;
-
-  Noite({this.tempo, this.graus});
-
-  Noite.fromJson(Map<String, dynamic> json) {
-    tempo = json['tempo'];
-    graus = json['graus'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['tempo'] = tempo;
-    data['graus'] = graus;
-    return data;
   }
 }
