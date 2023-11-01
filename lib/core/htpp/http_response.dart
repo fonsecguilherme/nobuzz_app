@@ -11,5 +11,6 @@ class HttpResponse<T> {
   });
 
   @override
-  String toString() => 'HttpResponse(data: $data, statusCode: $statusCode, statusMessage: $statusMessage)';
+  String toString() =>
+      'HttpResponse(data: $data, statusCode: $statusCode, statusMessage: $statusMessage)';
 }
