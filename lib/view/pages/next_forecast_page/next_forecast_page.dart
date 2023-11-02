@@ -66,24 +66,19 @@ class NextForecastsPage extends StatelessWidget {
                   ),
                   children: [
                     ListViewItemWidget(
-                        weekday: weekdays[0],
-                        manha: dias![0].segunda![0].manha!),
+                        weekday: weekdays[0], dias: dias![0].segunda!),
                     ListViewItemWidget(
-                        weekday: weekdays[1], manha: dias![0].terca![0].manha!),
+                        weekday: weekdays[1], dias: dias![0].terca!),
                     ListViewItemWidget(
-                        weekday: weekdays[2],
-                        manha: dias![0].quarta![0].manha!),
+                        weekday: weekdays[2], dias: dias![0].quarta!),
                     ListViewItemWidget(
-                        weekday: weekdays[3],
-                        manha: dias![0].quinta![0].manha!),
+                        weekday: weekdays[3], dias: dias![0].quinta!),
                     ListViewItemWidget(
-                        weekday: weekdays[4], manha: dias![0].sexta![0].manha!),
+                        weekday: weekdays[4], dias: dias![0].sexta!),
                     ListViewItemWidget(
-                        weekday: weekdays[5],
-                        manha: dias![0].sabado![0].manha!),
+                        weekday: weekdays[5], dias: dias![0].sabado!),
                     ListViewItemWidget(
-                        weekday: weekdays[6],
-                        manha: dias![0].domingo![0].manha!),
+                        weekday: weekdays[6], dias: dias![0].domingo!),
                   ],
                 ),
               ),
