@@ -66,13 +66,13 @@ class Estados {
 }
 
 class Dias {
-  List<Dia>? segunda;
-  List<Dia>? terca;
-  List<Dia>? quarta;
-  List<Dia>? quinta;
-  List<Dia>? sexta;
-  List<Dia>? sabado;
-  List<Dia>? domingo;
+  List<Periodo>? segunda;
+  List<Periodo>? terca;
+  List<Periodo>? quarta;
+  List<Periodo>? quinta;
+  List<Periodo>? sexta;
+  List<Periodo>? sabado;
+  List<Periodo>? domingo;
 
   Dias(
       {this.segunda,
@@ -85,45 +85,45 @@ class Dias {
 
   Dias.fromJson(Map<String, dynamic> json) {
     if (json['segunda'] != null) {
-      segunda = <Dia>[];
+      segunda = <Periodo>[];
       json['segunda'].forEach((v) {
-        segunda!.add(Dia.fromJson(v));
+        segunda!.add(Periodo.fromJson(v));
       });
     }
     if (json['terca'] != null) {
-      terca = <Dia>[];
+      terca = <Periodo>[];
       json['terca'].forEach((v) {
-        terca!.add(Dia.fromJson(v));
+        terca!.add(Periodo.fromJson(v));
       });
     }
     if (json['quarta'] != null) {
-      quarta = <Dia>[];
+      quarta = <Periodo>[];
       json['quarta'].forEach((v) {
-        quarta!.add(Dia.fromJson(v));
+        quarta!.add(Periodo.fromJson(v));
       });
     }
     if (json['quinta'] != null) {
-      quinta = <Dia>[];
+      quinta = <Periodo>[];
       json['quinta'].forEach((v) {
-        quinta!.add(Dia.fromJson(v));
+        quinta!.add(Periodo.fromJson(v));
       });
     }
     if (json['sexta'] != null) {
-      sexta = <Dia>[];
+      sexta = <Periodo>[];
       json['sexta'].forEach((v) {
-        sexta!.add(Dia.fromJson(v));
+        sexta!.add(Periodo.fromJson(v));
       });
     }
     if (json['sabado'] != null) {
-      sabado = <Dia>[];
+      sabado = <Periodo>[];
       json['sabado'].forEach((v) {
-        sabado!.add(Dia.fromJson(v));
+        sabado!.add(Periodo.fromJson(v));
       });
     }
     if (json['domingo'] != null) {
-      domingo = <Dia>[];
+      domingo = <Periodo>[];
       json['domingo'].forEach((v) {
-        domingo!.add(Dia.fromJson(v));
+        domingo!.add(Periodo.fromJson(v));
       });
     }
   }
@@ -155,14 +155,14 @@ class Dias {
   }
 }
 
-class Dia {
+class Periodo {
   List<Info>? manha;
   List<Info>? tarde;
   List<Info>? noite;
 
-  Dia({this.manha, this.tarde, this.noite});
+  Periodo({this.manha, this.tarde, this.noite});
 
-  Dia.fromJson(Map<String, dynamic> json) {
+  Periodo.fromJson(Map<String, dynamic> json) {
     if (json['manha'] != null) {
       manha = <Info>[];
       json['manha'].forEach((v) {
