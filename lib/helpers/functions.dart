@@ -52,6 +52,15 @@ class Functions {
     }
   }
 
+  static String brazilianDate() {
+    final now = DateTime.now();
+    String day = DateFormat('d').format(now);
+    String month = DateFormat('MMMM').format(now);
+    String year = DateFormat('y').format(now);
+
+    return '$day de $month de $year';
+  }
+
   static String imageWeather(String? weather) {
     if (weather == 'Sol') {
       return 'assets/images/sol.png';
