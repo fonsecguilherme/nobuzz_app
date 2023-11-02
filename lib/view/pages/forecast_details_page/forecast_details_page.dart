@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/period_item_widget.dart';
+import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/top_weather_banner.dart';
 
 class ForecastDetailPage extends StatelessWidget {
   final List<Periodo> periodo;
@@ -37,12 +38,14 @@ class ForecastDetailPage extends StatelessWidget {
             ),
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(
+                height: 75,
+              ),
               Flexible(
                 flex: 3,
-                child: Container(
-                  color: Colors.amber,
+                child: TopWeatherBanner(
+                  periodo: periodo,
                 ),
               ),
               const Text(
@@ -55,6 +58,13 @@ class ForecastDetailPage extends StatelessWidget {
               Flexible(
                 flex: 2,
                 child: _todayForecast(),
+              ),
+              const Text(
+                'Estados',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
               ),
               Flexible(
                 flex: 1,
