@@ -22,6 +22,7 @@ class NextForecastsPage extends StatelessWidget {
     ];
 
     String temp = days![0].segunda![0].manha![0].graus;
+    String? condition = days![0].segunda![0].manha![0].tempo;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -42,7 +43,7 @@ class NextForecastsPage extends StatelessWidget {
               ),
               Flexible(
                 flex: 4,
-                child: TodayBannerWidget(temp: temp),
+                child: TodayBannerWidget(temp: temp, condition: condition),
               ),
               Flexible(
                 flex: 6,

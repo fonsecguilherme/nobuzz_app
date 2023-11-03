@@ -3,10 +3,12 @@ import 'package:nobuzz_app/helpers/functions.dart';
 
 class TodayBannerWidget extends StatelessWidget {
   final String temp;
+  final String? condition;
 
   const TodayBannerWidget({
     super.key,
     required this.temp,
+    required this.condition,
   });
 
   @override
@@ -42,7 +44,7 @@ class TodayBannerWidget extends StatelessWidget {
                     fit: BoxFit.fill,
                     height: 132,
                     width: 169,
-                    'assets/images/chuva.png',
+                    Functions.imageWeather(condition),
                   ),
                 ),
                 Padding(
