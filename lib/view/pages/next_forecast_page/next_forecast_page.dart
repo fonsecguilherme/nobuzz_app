@@ -5,9 +5,10 @@ import 'package:nobuzz_app/view/pages/next_forecast_page/widgets/listview_item_w
 import 'package:nobuzz_app/view/pages/next_forecast_page/widgets/today_banner_widget.dart';
 
 class NextForecastsPage extends StatelessWidget {
+  final String? stateName;
   final List<Dias>? days;
 
-  const NextForecastsPage({super.key, this.days});
+  const NextForecastsPage({super.key, this.days, this.stateName});
 
   @override
   Widget build(BuildContext context) {
@@ -53,19 +54,33 @@ class NextForecastsPage extends StatelessWidget {
                   ),
                   children: [
                     ListViewItemWidget(
-                        weekday: weekdays[0], day: days![0].segunda!),
+                        weekday: weekdays[0],
+                        day: days![0].segunda!,
+                        stateName: stateName),
                     ListViewItemWidget(
-                        weekday: weekdays[1], day: days![0].terca!),
+                        weekday: weekdays[1],
+                        day: days![0].terca!,
+                        stateName: stateName),
                     ListViewItemWidget(
-                        weekday: weekdays[2], day: days![0].quarta!),
+                        weekday: weekdays[2],
+                        day: days![0].quarta!,
+                        stateName: stateName),
                     ListViewItemWidget(
-                        weekday: weekdays[3], day: days![0].quinta!),
+                        weekday: weekdays[3],
+                        day: days![0].quinta!,
+                        stateName: stateName),
                     ListViewItemWidget(
-                        weekday: weekdays[4], day: days![0].sexta!),
+                        weekday: weekdays[4],
+                        day: days![0].sexta!,
+                        stateName: stateName),
                     ListViewItemWidget(
-                        weekday: weekdays[5], day: days![0].sabado!),
+                        weekday: weekdays[5],
+                        day: days![0].sabado!,
+                        stateName: stateName),
                     ListViewItemWidget(
-                        weekday: weekdays[6], day: days![0].domingo!),
+                        weekday: weekdays[6],
+                        day: days![0].domingo!,
+                        stateName: stateName),
                   ],
                 ),
               ),

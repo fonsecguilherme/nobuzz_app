@@ -10,10 +10,12 @@ import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/top_weather_
 
 class ForecastDetailPage extends StatefulWidget {
   final List<Periodo> period;
+  final String? stateName;
 
   const ForecastDetailPage({
     super.key,
     required this.period,
+    this.stateName,
   });
 
   @override
@@ -35,7 +37,7 @@ class _ForecastDetailPageState extends State<ForecastDetailPage> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: const Text('Nome do estado'),
+          title: Text(widget.stateName!),
           centerTitle: true,
         ),
         body: Container(

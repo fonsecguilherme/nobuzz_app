@@ -7,12 +7,14 @@ import 'package:nobuzz_app/view/pages/forecast_details_page/forecast_details_pag
 
 class ListViewItemWidget extends StatelessWidget {
   final String weekday;
+  final String? stateName;
   final List<Periodo> day;
 
   const ListViewItemWidget({
     super.key,
     required this.weekday,
     required this.day,
+    required this.stateName,
   });
 
   @override
@@ -71,7 +73,10 @@ class ListViewItemWidget extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => BlocProvider.value(
               value: WeatherCubit(),
-              child: ForecastDetailPage(period: day),
+              child: ForecastDetailPage(
+                period: day,
+                stateName: stateName,
+              ),
             ),
           ),
         ),

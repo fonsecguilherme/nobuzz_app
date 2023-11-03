@@ -64,8 +64,10 @@ class _CitiesBuilderState extends State<CitiesBuilder> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      NextForecastsPage(days: states[index].dias),
+                  builder: (context) => NextForecastsPage(
+                    days: states[index].dias,
+                    stateName: states[index].estado,
+                  ),
                 ),
               );
             },
