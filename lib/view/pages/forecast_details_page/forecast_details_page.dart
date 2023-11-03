@@ -9,11 +9,11 @@ import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/period_item_
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/top_weather_banner.dart';
 
 class ForecastDetailPage extends StatefulWidget {
-  final List<Periodo> periodo;
+  final List<Periodo> period;
 
   const ForecastDetailPage({
     super.key,
-    required this.periodo,
+    required this.period,
   });
 
   @override
@@ -48,7 +48,7 @@ class _ForecastDetailPageState extends State<ForecastDetailPage> {
               Flexible(
                 flex: 3,
                 child: TopWeatherBanner(
-                  periodo: widget.periodo,
+                  periodo: widget.period,
                 ),
               ),
               const Text(
@@ -104,9 +104,9 @@ class _ForecastDetailPageState extends State<ForecastDetailPage> {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            PeriodItemWidget(info: widget.periodo[0].manha, periodo: 'Manhã'),
-            PeriodItemWidget(info: widget.periodo[0].tarde, periodo: 'Tarde'),
-            PeriodItemWidget(info: widget.periodo[0].noite, periodo: 'Noite'),
+            PeriodItemWidget(info: widget.period[0].manha, periodo: 'Manhã'),
+            PeriodItemWidget(info: widget.period[0].tarde, periodo: 'Tarde'),
+            PeriodItemWidget(info: widget.period[0].noite, periodo: 'Noite'),
           ],
         ),
       );

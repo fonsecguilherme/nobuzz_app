@@ -15,10 +15,10 @@ class CitiesBuilder extends StatefulWidget {
 class _CitiesBuilderState extends State<CitiesBuilder> {
   @override
   Widget build(BuildContext context) {
-    List<Estados> estados = widget.result.result!.estados!;
+    List<Estados> states = widget.result.result!.estados!;
 
     return ListView.builder(
-      itemCount: estados.length,
+      itemCount: states.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16),
@@ -42,7 +42,7 @@ class _CitiesBuilderState extends State<CitiesBuilder> {
                   Padding(
                     padding: const EdgeInsets.only(left: 36.0),
                     child: Text(
-                      estados[index].estado!,
+                      states[index].estado!,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -54,7 +54,7 @@ class _CitiesBuilderState extends State<CitiesBuilder> {
                     padding: const EdgeInsets.only(right: 36.0),
                     child: Image.asset(
                       Functions.imageWeather(
-                          estados[index].dias![0].segunda![0].manha![0].tempo),
+                          states[index].dias![0].segunda![0].manha![0].tempo),
                     ),
                   ),
                 ],
@@ -65,7 +65,7 @@ class _CitiesBuilderState extends State<CitiesBuilder> {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      NextForecastsPage(dias: estados[index].dias),
+                      NextForecastsPage(days: states[index].dias),
                 ),
               );
             },

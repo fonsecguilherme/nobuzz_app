@@ -7,12 +7,12 @@ import 'package:nobuzz_app/view/pages/forecast_details_page/forecast_details_pag
 
 class ListViewItemWidget extends StatelessWidget {
   final String weekday;
-  final List<Periodo> dias;
+  final List<Periodo> day;
 
   const ListViewItemWidget({
     super.key,
     required this.weekday,
-    required this.dias,
+    required this.day,
   });
 
   @override
@@ -41,11 +41,11 @@ class ListViewItemWidget extends StatelessWidget {
                     width: 55,
                     height: 50,
                     child: Image.asset(
-                      Functions.imageWeather(dias[0].manha![0].tempo),
+                      Functions.imageWeather(day[0].manha![0].tempo),
                     ),
                   ),
                   Text(
-                    dias[0].manha![0].tempo ?? 'Indisponível',
+                    day[0].manha![0].tempo ?? 'Indisponível',
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -57,7 +57,7 @@ class ListViewItemWidget extends StatelessWidget {
             Flexible(
               flex: 1,
               child: Text(
-                '${dias[0].manha![0].graus}°',
+                '${day[0].manha![0].graus}°',
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -71,7 +71,7 @@ class ListViewItemWidget extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => BlocProvider.value(
               value: WeatherCubit(),
-              child: ForecastDetailPage(periodo: dias),
+              child: ForecastDetailPage(period: day),
             ),
           ),
         ),

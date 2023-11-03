@@ -9,7 +9,7 @@ class FeedbackGridWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final estados = result!.estados;
+    final states = result!.estados;
 
     return GridView.builder(
       gridDelegate:
@@ -27,7 +27,7 @@ class FeedbackGridWidget extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage(
                     Functions.imageWeather(
-                      estados![index].toString(),
+                      states![index].toString(),
                     ),
                   ),
                 ),
@@ -36,7 +36,7 @@ class FeedbackGridWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: Text(
-                estados[index],
+                states[index],
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,

@@ -5,9 +5,9 @@ import 'package:nobuzz_app/view/pages/next_forecast_page/widgets/listview_item_w
 import 'package:nobuzz_app/view/pages/next_forecast_page/widgets/today_banner_widget.dart';
 
 class NextForecastsPage extends StatelessWidget {
-  final List<Dias>? dias;
+  final List<Dias>? days;
 
-  const NextForecastsPage({super.key, this.dias});
+  const NextForecastsPage({super.key, this.days});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class NextForecastsPage extends StatelessWidget {
       'Domingo'
     ];
 
-    String temp = dias![0].segunda![0].manha![0].graus;
+    String temp = days![0].segunda![0].manha![0].graus;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -52,19 +52,19 @@ class NextForecastsPage extends StatelessWidget {
                   ),
                   children: [
                     ListViewItemWidget(
-                        weekday: weekdays[0], dias: dias![0].segunda!),
+                        weekday: weekdays[0], day: days![0].segunda!),
                     ListViewItemWidget(
-                        weekday: weekdays[1], dias: dias![0].terca!),
+                        weekday: weekdays[1], day: days![0].terca!),
                     ListViewItemWidget(
-                        weekday: weekdays[2], dias: dias![0].quarta!),
+                        weekday: weekdays[2], day: days![0].quarta!),
                     ListViewItemWidget(
-                        weekday: weekdays[3], dias: dias![0].quinta!),
+                        weekday: weekdays[3], day: days![0].quinta!),
                     ListViewItemWidget(
-                        weekday: weekdays[4], dias: dias![0].sexta!),
+                        weekday: weekdays[4], day: days![0].sexta!),
                     ListViewItemWidget(
-                        weekday: weekdays[5], dias: dias![0].sabado!),
+                        weekday: weekdays[5], day: days![0].sabado!),
                     ListViewItemWidget(
-                        weekday: weekdays[6], dias: dias![0].domingo!),
+                        weekday: weekdays[6], day: days![0].domingo!),
                   ],
                 ),
               ),
