@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nobuzz_app/core/cubit/feedback_cubit/feedback_cubit.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/feedback_page/feedback_page.dart';
@@ -63,7 +65,10 @@ class PeriodItemWidget extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FeedbackPage(),
+                builder: (context) => BlocProvider(
+                  create: (context) => FeedbackCubit(),
+                  child: const FeedbackPage(),
+                ),
               ),
             );
           },
