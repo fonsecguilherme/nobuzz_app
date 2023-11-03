@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nobuzz_app/core/cubit/weather_cubit.dart';
-import 'package:nobuzz_app/core/cubit/weather_state.dart';
+import 'package:nobuzz_app/core/cubit/weather_cubit/weather_cubit.dart';
+import 'package:nobuzz_app/core/cubit/weather_cubit/weather_state.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/bottom_carousel_widget.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/period_item_widget.dart';

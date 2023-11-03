@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nobuzz_app/core/cubit/weather_cubit.dart';
+import 'package:nobuzz_app/core/cubit/weather_cubit/weather_cubit.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/forecast_details_page.dart';
