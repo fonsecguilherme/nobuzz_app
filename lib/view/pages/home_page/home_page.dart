@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nobuzz_app/core/cubit/weather_cubit/weather_cubit.dart';
 import 'package:nobuzz_app/core/cubit/weather_cubit/weather_state.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/view/pages/home_page/widgets/cities_builder_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,22 +36,7 @@ class _HomeState extends State<HomePage> {
         centerTitle: true,
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF331972),
-              Color(0xFF352163),
-              Color(0xFF33143C),
-            ],
-          ),
-          image: DecorationImage(
-            image: AssetImage('assets/images/background.png'),
-            fit: BoxFit.cover,
-            opacity: 0.2,
-          ),
-        ),
+        decoration: Style.appBackground(),
         child: _makeBody(state),
       ),
     );

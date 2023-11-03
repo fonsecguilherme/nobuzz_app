@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/next_forecast_page/widgets/listview_item_widget.dart';
 import 'package:nobuzz_app/view/pages/next_forecast_page/widgets/today_banner_widget.dart';
@@ -31,22 +32,7 @@ class NextForecastsPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF331972),
-              Color(0xFF352163),
-              Color(0xFF33143C),
-            ],
-          ),
-          image: DecorationImage(
-            image: AssetImage('assets/images/background.png'),
-            fit: BoxFit.cover,
-            opacity: 0.2,
-          ),
-        ),
+        decoration: Style.appBackground(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(

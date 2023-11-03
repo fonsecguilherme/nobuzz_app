@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nobuzz_app/core/cubit/weather_cubit/weather_cubit.dart';
 import 'package:nobuzz_app/core/cubit/weather_cubit/weather_state.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/bottom_carousel_widget.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/period_item_widget.dart';
@@ -38,22 +39,7 @@ class _ForecastDetailPageState extends State<ForecastDetailPage> {
           centerTitle: true,
         ),
         body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF331972),
-                Color(0xFF352163),
-                Color(0xFF33143C),
-              ],
-            ),
-            image: DecorationImage(
-              image: AssetImage('assets/images/background.png'),
-              fit: BoxFit.cover,
-              opacity: 0.2,
-            ),
-          ),
+          decoration: Style.appBackground(),
           child: Column(
             children: [
               const SizedBox(
