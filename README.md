@@ -18,6 +18,7 @@ PT/BR 🇧🇷
 - As informações meterelógicas de cada estado são sempre as da manhã de domingo. O que eu pensei em fazer foi uma função que de acordo coma hora do dia (fiz um esboço dessa funcionalidade na classe functions). 
 - Testar em telas de tamanhos diferentes para verficar se não existem overflows de pixels nos widgets.
 - Como o app tem TextStule parecidos usar a classe style para criar componentes para serem reaproveitados ao longo do app
+- Componentizar alguns widgets como o container translúcido que é usado em 3 telas, por exemplos
 
 ## Screenshots
 
