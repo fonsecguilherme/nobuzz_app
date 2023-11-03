@@ -25,6 +25,7 @@ PT/BR 🇧🇷
 - Testar em telas de tamanhos diferentes para verficar se não existem overflows de pixels nos widgets.
 - Como o app tem TextStyle parecidos usar a classe style para criar componentes para serem reaproveitados ao longo do app
 - Componentizar alguns widgets como o container translúcido que é usado em 3 telas, por exemplos
+- Acabei não verificando se no projeto do figma contem assets 1x, 2x e 3X. Também é algo que pode ser melhorado. Algumas imagens maiores estão com aspecto pixelado.
 
 ## Instalação
 
