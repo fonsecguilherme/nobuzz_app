@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:nobuzz_app/core/cubit/weather_state.dart';
+import 'package:nobuzz_app/core/cubit/weather_cubit/weather_state.dart';
 import 'package:nobuzz_app/repository/weather_repository.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
