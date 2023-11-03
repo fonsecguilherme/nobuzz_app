@@ -1,4 +1,3 @@
-
 import 'package:nobuzz_app/model/feedback_model.dart';
 
 abstract class FeedbackState {}

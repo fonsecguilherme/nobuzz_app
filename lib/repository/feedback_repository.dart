@@ -3,9 +3,9 @@ import 'package:nobuzz_app/core/htpp/i_http.dart';
 import 'package:nobuzz_app/model/feedback_model.dart';
 
 class FeedbackRepository {
-    final IHttp http = HttpDio();
+  final IHttp http = HttpDio();
 
-      Future<Feedback?> getFeedback() async {
+  Future<Feedback?> getFeedback() async {
     final response = await http.post('tempo');
 
     if (response.data != null) {
