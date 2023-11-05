@@ -1,5 +1,5 @@
 
-# Busca CEP
+# Nobuzz Weather App
 PT/BR 🇧🇷
 - App produzido para equipe da petroplus. A aplicação de dados climáticos consiste em consultar dados que foram passados a um JSON com as informações que disponibilizadas para o backend.
 - O app faz a consulta ao endpoint e recebe as informações. É mostrado uma lista com os estados com uma imagem representando a condição climática do local.
