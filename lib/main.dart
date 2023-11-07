@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nobuzz_app/core/cubit/weather_cubit/weather_cubit.dart';
+import 'package:nobuzz_app/core/providers/weather_provider.dart';
 import 'package:nobuzz_app/view/pages/home_page/home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,8 +14,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BlocProvider(
-        create: (context) => WeatherCubit(),
+      home: ChangeNotifierProvider(
+        create: (context) => WeatherProvider(),
         child: const HomePage(),
       ),
     );
