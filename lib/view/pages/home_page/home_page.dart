@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nobuzz_app/core/cubit/weather_cubit/weather_cubit.dart';
-import 'package:nobuzz_app/core/cubit/weather_cubit/weather_state.dart';
+import 'package:nobuzz_app/core/providers/weather_provider.dart';
 import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/view/pages/home_page/widgets/cities_builder_widget.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,50 +12,47 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomeState extends State<HomePage> {
-  WeatherCubit get weatherCubit => context.read<WeatherCubit>();
+  WeatherProvider get weatherProvider => context.read<WeatherProvider>();
 
   @override
   void initState() {
     super.initState();
-    weatherCubit.getAllWeather();
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      weatherProvider.getAllWeather();
+    });
   }
 
   @override
-  Widget build(BuildContext context) => BlocBuilder<WeatherCubit, WeatherState>(
-        builder: _builder,
+  Widget build(BuildContext context) => Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          title: const Text('Procurar por estado'),
+          centerTitle: true,
+        ),
+        body: Container(
+          decoration: Style.appBackground(),
+          child: Consumer<WeatherProvider>(
+            builder: (BuildContext context, value, Widget? child) =>
+                _makeBody(value),
+          ),
+        ),
       );
 
-  Widget _builder(BuildContext context, WeatherState state) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        title: const Text('Procurar por estado'),
-        centerTitle: true,
-      ),
-      body: Container(
-        decoration: Style.appBackground(),
-        child: _makeBody(state),
-      ),
-    );
-  }
-
-  Widget _makeBody(WeatherState state) {
-    if (state is WeatherErrorState) {
-      return Center(
-        child: Text(state.errorMessage),
-      );
-    } else if (state is WeatherLoadingState) {
+  Widget _makeBody(WeatherProvider value) {
+    if (value.isLoading) {
       return const Center(
         child: CircularProgressIndicator(),
       );
-    } else if (state is WeatherInitialState) {
+    } else if (value.weather == null) {
       return const Center(
-        child: Text('Estado inicial'),
+        child: Text('Erro ao obter dados!'),
       );
-    } else if (state is WeatherFetchedState) {
-      return CitiesBuilder(result: state.result);
+    } else if (value.weather != null) {
+      final weather = value.weather;
+      return CitiesBuilder(result: weather!);
     }
     return const SizedBox();
   }
