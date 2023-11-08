@@ -12,13 +12,12 @@ class FeedbackPage extends StatefulWidget {
 }
 
 class _FeedbackPageState extends State<FeedbackPage> {
-  FeedbackProvider get feedbackProvider => context.read<FeedbackProvider>();
-
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPersistentFrameCallback((timeStamp) {
-      feedbackProvider.getFeedback();
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<FeedbackProvider>(context, listen: false).getFeedback();
     });
   }
 
@@ -34,9 +33,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
         body: Container(
           decoration: Style.appBackground(),
           child: Consumer<FeedbackProvider>(
-            builder:
-                (BuildContext context, FeedbackProvider value, Widget? child) =>
-                    _makeBody(value),
+            builder: (context, value, child) => _makeBody(value),
           ),
         ),
       );
@@ -48,17 +45,11 @@ class _FeedbackPageState extends State<FeedbackPage> {
       );
     } else if (value.feedback == null) {
       return const Center(
-        child: Text('Erro ao obter dados!'),
+        child: Text('Erro ao obter dados.'),
       );
     } else if (value.feedback != null) {
       return FeedbackGridWidget(value.feedback!.result);
     }
-    return const Text('caiu fora');
-  }
-
-  @override
-  void dispose() {
-    feedbackProvider.dispose();
-    super.dispose();
+    return const SizedBox();
   }
 }
