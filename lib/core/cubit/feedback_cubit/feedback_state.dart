@@ -7,7 +7,7 @@ class FeedbackInitialState extends FeedbackState {}
 class FeedbackLoadingState extends FeedbackState {}
 
 class FeedbackFetchedState extends FeedbackState {
-  final Feedback result;
+  final FeedbackRes result;
 
   FeedbackFetchedState(this.result);
 }
