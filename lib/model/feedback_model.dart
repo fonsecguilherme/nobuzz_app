@@ -1,9 +1,9 @@
-class Feedback {
+class FeedbackRes {
   Result? result;
 
-  Feedback({this.result});
+  FeedbackRes({this.result});
 
-  Feedback.fromJson(Map<String, dynamic> json) {
+  FeedbackRes.fromJson(Map<String, dynamic> json) {
     result = json['result'] != null ? Result.fromJson(json['result']) : null;
   }
 

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nobuzz_app/core/cubit/feedback_cubit/feedback_cubit.dart';
-import 'package:nobuzz_app/core/cubit/feedback_cubit/feedback_state.dart';
+import 'package:nobuzz_app/core/providers/feedback_provider.dart';
 import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/view/pages/feedback_page/widgets/feedback_grid_widget.dart';
+import 'package:provider/provider.dart';
 
 class FeedbackPage extends StatefulWidget {
   const FeedbackPage({super.key});
@@ -13,19 +12,17 @@ class FeedbackPage extends StatefulWidget {
 }
 
 class _FeedbackPageState extends State<FeedbackPage> {
-  FeedbackCubit get feedbackCubit => context.read<FeedbackCubit>();
-
   @override
   void initState() {
     super.initState();
-    feedbackCubit.getFeedback();
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<FeedbackProvider>(context, listen: false).getFeedback();
+    });
   }
 
   @override
-  Widget build(BuildContext context) =>
-      BlocBuilder<FeedbackCubit, FeedbackState>(builder: _builder);
-
-  Widget _builder(BuildContext context, FeedbackState state) => Scaffold(
+  Widget build(BuildContext context) => Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -35,25 +32,23 @@ class _FeedbackPageState extends State<FeedbackPage> {
         ),
         body: Container(
           decoration: Style.appBackground(),
-          child: _makeBody(state),
+          child: Consumer<FeedbackProvider>(
+            builder: (context, value, child) => _makeBody(value),
+          ),
         ),
       );
 
-  Widget _makeBody(FeedbackState state) {
-    if (state is FeedbackErrorState) {
-      return Center(
-        child: Text(state.errorMessage),
-      );
-    } else if (state is FeedbackLoadingState) {
+  Widget _makeBody(FeedbackProvider value) {
+    if (value.isLoading) {
       return const Center(
         child: CircularProgressIndicator(),
       );
-    } else if (state is FeedbackInitialState) {
+    } else if (value.feedback == null) {
       return const Center(
-        child: Text('Estado inicial'),
+        child: Text('Erro ao obter dados.'),
       );
-    } else if (state is FeedbackFetchedState) {
-      return FeedbackGridWidget(state.result.result);
+    } else if (value.feedback != null) {
+      return FeedbackGridWidget(value.feedback!.result);
     }
     return const SizedBox();
   }
