@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nobuzz_app/core/cubit/weather_cubit/weather_cubit.dart';
-import 'package:nobuzz_app/core/cubit/weather_cubit/weather_state.dart';
+import 'package:nobuzz_app/core/providers/weather_provider.dart';
 import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/bottom_carousel_widget.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/period_item_widget.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/widgets/top_weather_banner.dart';
+import 'package:provider/provider.dart';
 
 class ForecastDetailPage extends StatefulWidget {
   final List<Periodo> period;
@@ -23,12 +22,14 @@ class ForecastDetailPage extends StatefulWidget {
 }
 
 class _ForecastDetailPageState extends State<ForecastDetailPage> {
-  WeatherCubit get weatherCubit => context.read<WeatherCubit>();
+  WeatherProvider get weatherProvider => context.read<WeatherProvider>();
 
   @override
   void initState() {
     super.initState();
-    weatherCubit.getAllWeather();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      weatherProvider.getAllWeather();
+    });
   }
 
   @override
@@ -77,26 +78,22 @@ class _ForecastDetailPageState extends State<ForecastDetailPage> {
         ),
       );
 
-  Widget _bottomStates() => BlocBuilder<WeatherCubit, WeatherState>(
-        builder: _builder,
+  Widget _bottomStates() => Consumer<WeatherProvider>(
+        builder: (context, value, child) => _builder(value),
       );
 
-  Widget _builder(BuildContext context, WeatherState state) {
-    if (state is WeatherErrorState) {
-      return Center(
-        child: Text(state.errorMessage),
-      );
-    } else if (state is WeatherLoadingState) {
+  Widget _builder(WeatherProvider value) {
+    if (value.isLoading) {
       return const Center(
         child: CircularProgressIndicator(),
       );
-    } else if (state is WeatherInitialState) {
+    } else if (value.weather == null) {
       return const Center(
-        child: Text('Estado inicial'),
+        child: Text('Erro ao obter dados!'),
       );
-    } else if (state is WeatherFetchedState) {
+    } else if (value.weather != null) {
       return BottomCarouselWidget(
-        weather: state.result,
+        weather: value.weather!,
       );
     }
     return const SizedBox();

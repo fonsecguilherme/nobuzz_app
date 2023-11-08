@@ -12,11 +12,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ChangeNotifierProvider(
-        create: (context) => WeatherProvider(),
-        child: const HomePage(),
+    return ChangeNotifierProvider(
+      create: (context) => WeatherProvider(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
       ),
     );
   }

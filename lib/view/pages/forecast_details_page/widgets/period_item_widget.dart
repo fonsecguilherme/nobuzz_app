@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nobuzz_app/core/cubit/feedback_cubit/feedback_cubit.dart';
+import 'package:nobuzz_app/core/providers/feedback_provider.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/feedback_page/feedback_page.dart';
+import 'package:provider/provider.dart';
 
 class PeriodItemWidget extends StatelessWidget {
   final List<Info>? info;
@@ -14,7 +14,7 @@ class PeriodItemWidget extends StatelessWidget {
     super.key,
     this.info,
   });
-//TODO: add navigation tofinal screen
+
   @override
   Widget build(BuildContext context) => Padding(
         padding:
@@ -61,17 +61,15 @@ class PeriodItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => BlocProvider(
-                  create: (context) => FeedbackCubit(),
-                  child: const FeedbackPage(),
-                ),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChangeNotifierProvider<FeedbackProvider>(
+                create: (_) => FeedbackProvider(),
+                child: const FeedbackPage(),
               ),
-            );
-          },
+            ),
+          ),
         ),
       );
 }
