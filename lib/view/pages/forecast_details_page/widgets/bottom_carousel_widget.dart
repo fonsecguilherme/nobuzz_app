@@ -54,11 +54,13 @@ class BottomCarouselWidget extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                Text(
-                  '$temp°',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
+                Flexible(
+                  child: Text(
+                    '$temp°',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                    ),
                   ),
                 ),
               ],
