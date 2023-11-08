@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nobuzz_app/helpers/functions.dart';
 import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/next_forecast_page/widgets/listview_item_widget.dart';
@@ -41,6 +42,13 @@ class NextForecastsPage extends StatelessWidget {
             children: [
               const SizedBox(
                 height: 75,
+              ),
+              Text(
+                Functions.weekDay(),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
               ),
               Flexible(
                 flex: 4,
