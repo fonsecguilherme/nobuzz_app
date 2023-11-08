@@ -11,9 +11,9 @@ PT/BR 🇧🇷
 
 **Front-end:** Dart v3.1.4 e Flutter v3.13.8
 
-**Pacotes utilizados:** [BLoC](https://pub.dev/packages/bloc), [Flutter BLoC](https://pub.dev/packages/flutter_bloc), [DIO](https://pub.dev/packages/dio), [Logger](https://pub.dev/packages/logger), [Intl](https://pub.dev/packages/intl)
+**Pacotes utilizados:** [Provider](https://pub.dev/packages/provider), [DIO](https://pub.dev/packages/dio), [Logger](https://pub.dev/packages/logger), [Intl](https://pub.dev/packages/intl)
 
-State management: BLoC and Flutter BLoC
+State management: Provider + ChangeNotifier
 
 API requests: DIO
 
