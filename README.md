@@ -20,9 +20,9 @@ API requests: DIO
 ## Melhorias
 
 PT/BR 🇧🇷
-- As informações meterelógicas de cada estado são sempre as da manhã de domingo. O que eu pensei em fazer foi uma função que de acordo coma hora do dia (fiz um esboço dessa funcionalidade na classe functions).
-- Na tela onde tem a previsão dos próximos 7 dias, organizar para que o primeiro dia seja o dia atual.
-- Testar em telas de tamanhos diferentes para verficar se não existem overflows de pixels nos widgets.
+- Alterar o código de modo que as informações sejam dinâmicas de acordo com dia real da semana
+- [x] Na tela onde tem a previsão dos próximos 7 dias, organizar para que o primeiro dia seja o dia atual.
+- [x] Testar em telas de tamanhos diferentes para verficar se não existem overflows de pixels nos widgets.
 - Como o app tem TextStyle parecidos usar a classe style para criar componentes para serem reaproveitados ao longo do app
 - Componentizar alguns widgets como o container translúcido que é usado em 3 telas, por exemplos
 - Acabei não verificando se no projeto do figma contem assets 1x, 2x e 3X. Também é algo que pode ser melhorado. Algumas imagens maiores estão com aspecto pixelado.
