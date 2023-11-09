@@ -13,16 +13,6 @@ class NextForecastsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> weekdays = [
-      'Segunda',
-      'Terça',
-      'Quarta',
-      'Quinta',
-      'Sexta',
-      'Sábado',
-      'Domingo'
-    ];
-
     String temp = days![0].segunda![0].manha![0].graus;
     String? condition = days![0].segunda![0].manha![0].tempo;
 
@@ -62,33 +52,40 @@ class NextForecastsPage extends StatelessWidget {
                   ),
                   children: [
                     ListViewItemWidget(
-                        weekday: weekdays[0],
-                        day: days![0].segunda!,
-                        stateName: stateName),
+                      weekday: Functions.weekdayOrder()[0],
+                      day: days![0].segunda!,
+                      stateName: stateName,
+                    ),
                     ListViewItemWidget(
-                        weekday: weekdays[1],
-                        day: days![0].terca!,
-                        stateName: stateName),
+                      weekday: Functions.weekdayOrder()[1],
+                      day: days![0].terca!,
+                      stateName: stateName,
+                    ),
                     ListViewItemWidget(
-                        weekday: weekdays[2],
-                        day: days![0].quarta!,
-                        stateName: stateName),
+                      weekday: Functions.weekdayOrder()[2],
+                      day: days![0].quarta!,
+                      stateName: stateName,
+                    ),
                     ListViewItemWidget(
-                        weekday: weekdays[3],
-                        day: days![0].quinta!,
-                        stateName: stateName),
+                      weekday: Functions.weekdayOrder()[3],
+                      day: days![0].quinta!,
+                      stateName: stateName,
+                    ),
                     ListViewItemWidget(
-                        weekday: weekdays[4],
-                        day: days![0].sexta!,
-                        stateName: stateName),
+                      weekday: Functions.weekdayOrder()[4],
+                      day: days![0].sexta!,
+                      stateName: stateName,
+                    ),
                     ListViewItemWidget(
-                        weekday: weekdays[5],
-                        day: days![0].sabado!,
-                        stateName: stateName),
+                      weekday: Functions.weekdayOrder()[5],
+                      day: days![0].sabado!,
+                      stateName: stateName,
+                    ),
                     ListViewItemWidget(
-                        weekday: weekdays[6],
-                        day: days![0].domingo!,
-                        stateName: stateName),
+                      weekday: Functions.weekdayOrder()[6],
+                      day: days![0].domingo!,
+                      stateName: stateName,
+                    ),
                   ],
                 ),
               ),
