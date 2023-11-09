@@ -18,7 +18,8 @@ class MainApp extends StatelessWidget {
       child: const MaterialApp(
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: [Locale('pt', 'BR')],
         debugShowCheckedModeBanner: false,
