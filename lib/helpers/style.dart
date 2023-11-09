@@ -17,4 +17,17 @@ class Style {
           opacity: 0.2,
         ),
       );
+
+  static TextStyle appbarText = const TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+    fontSize: 18,
+  );
+  static TextStyle stateNameListViewText = const TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+    fontSize: 20,
+  );
+
+  
 }

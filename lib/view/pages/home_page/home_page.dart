@@ -29,7 +29,10 @@ class _HomeState extends State<HomePage> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: const Text('Procurar por estado'),
+          title: Text(
+            'Procurar por estado',
+            style: Style.appbarText,
+          ),
           centerTitle: true,
         ),
         body: Container(

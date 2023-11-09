@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/next_forecast_page/next_forecast_page.dart';
 
@@ -43,11 +44,7 @@ class _CitiesBuilderState extends State<CitiesBuilder> {
                     padding: const EdgeInsets.only(left: 36.0),
                     child: Text(
                       states[index].estado!,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: Style.stateNameListViewText,
                     ),
                   ),
                   Padding(
