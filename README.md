@@ -52,7 +52,7 @@ Também é possível fazer o download do arquivo zip, entrar na pasta `nobuzz_ap
 
 * Forecast detail page Android
 <p float="left">
-  <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/forecast_details_page.png" width="350" />
+  <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/forecasts_details_page.png" width="350" />
 </p>
 
 * Feedback page Android
