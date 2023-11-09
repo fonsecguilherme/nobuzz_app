@@ -88,4 +88,11 @@ class Style {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
+
+  //Feedback page text style
+   static TextStyle conditionFeedbackPageText = const TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
 }

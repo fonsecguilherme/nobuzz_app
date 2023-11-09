@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/feedback_model.dart';
 
 class FeedbackGridWidget extends StatelessWidget {
@@ -39,11 +40,7 @@ class FeedbackGridWidget extends StatelessWidget {
             ),
             Text(
               states[index],
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: Style.conditionFeedbackPageText,
             ),
           ],
         );

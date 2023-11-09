@@ -27,7 +27,10 @@ class _FeedbackPageState extends State<FeedbackPage> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: const Text('Informações'),
+          title: Text(
+            'Informações',
+            style: Style.appbarText,
+          ),
           centerTitle: true,
         ),
         body: Container(
