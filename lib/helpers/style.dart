@@ -60,4 +60,32 @@ class Style {
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
+
+  //Forecast details page text style
+  static TextStyle weekdayForecastDetailpageText = const TextStyle(
+    color: Colors.white,
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle temperatureForecastDetailpageText = const TextStyle(
+    color: Colors.white,
+    fontSize: 81,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle dateForecastDetailpageText = const TextStyle(
+    color: Colors.white,
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle stateNameForecastDetailpageText = const TextStyle(
+    color: Colors.white,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle carouselTemperatureForecastDetailpageText = const TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
 }

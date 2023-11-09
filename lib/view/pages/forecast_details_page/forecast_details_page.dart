@@ -38,7 +38,10 @@ class _ForecastDetailPageState extends State<ForecastDetailPage> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: Text(widget.stateName!),
+          title: Text(
+            widget.stateName!,
+            style: Style.appbarText,
+          ),
           centerTitle: true,
         ),
         body: Container(
@@ -54,25 +57,22 @@ class _ForecastDetailPageState extends State<ForecastDetailPage> {
                   periodo: widget.period,
                 ),
               ),
-              const Text(
+              Text(
                 'Hoje',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
+                style: Style.weekdayForecastDetailpageText,
               ),
               Flexible(
                 flex: 2,
                 child: _todayForecast(),
               ),
-              const Text(
+              Text(
                 'Estados',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
+                style: Style.weekdayForecastDetailpageText,
               ),
-              Flexible(flex: 1, child: _bottomStates()),
+              Flexible(
+                flex: 1,
+                child: _bottomStates(),
+              ),
             ],
           ),
         ),

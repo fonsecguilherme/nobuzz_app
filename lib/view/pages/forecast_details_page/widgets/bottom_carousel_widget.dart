@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 
 class BottomCarouselWidget extends StatelessWidget {
@@ -49,18 +50,12 @@ class BottomCarouselWidget extends StatelessWidget {
                 ),
                 Text(
                   estados[index].estado.toString(),
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                  ),
+                  style: Style.stateNameForecastDetailpageText,
                 ),
                 Flexible(
                   child: Text(
                     '$temp°',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                    ),
+                    style: Style.carouselTemperatureForecastDetailpageText,
                   ),
                 ),
               ],

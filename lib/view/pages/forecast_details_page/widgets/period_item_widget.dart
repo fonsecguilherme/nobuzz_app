@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nobuzz_app/core/providers/feedback_provider.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/feedback_page/feedback_page.dart';
 import 'package:provider/provider.dart';
@@ -42,21 +43,14 @@ class PeriodItemWidget extends StatelessWidget {
               children: [
                 Text(
                   periodo,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600),
+                  style: Style.weekdayForecastDetailpageText,
                 ),
                 Image.asset(
                   Functions.imageWeather(info![0].tempo),
                 ),
                 Text(
-                  '${info![0].graus}',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  '${info![0].graus}°',
+                  style: Style.weekdayForecastDetailpageText,
                 ),
               ],
             ),

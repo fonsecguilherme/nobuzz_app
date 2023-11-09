@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 
 class TopWeatherBanner extends StatelessWidget {
@@ -16,10 +17,7 @@ class TopWeatherBanner extends StatelessWidget {
         children: [
           Text(
             Functions.weekDay(),
-            style: const TextStyle(
-              fontSize: 12,
-              color: Colors.white,
-            ),
+            style: Style.weekdayForecastDetailpageText,
           ),
           const SizedBox(height: 12),
           Image.asset(
@@ -32,17 +30,11 @@ class TopWeatherBanner extends StatelessWidget {
           ),
           Text(
             '${periodo[0].manha![0].graus}',
-            style: const TextStyle(
-              fontSize: 80,
-              color: Colors.white,
-            ),
+            style: Style.temperatureForecastDetailpageText,
           ),
           Text(
             Functions.brazilianDate(),
-            style: const TextStyle(
-              fontSize: 12,
-              color: Colors.white,
-            ),
+            style: Style.dateForecastDetailpageText,
           )
         ],
       );
