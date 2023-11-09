@@ -43,19 +43,23 @@ Também é possível fazer o download do arquivo zip, entrar na pasta `nobuzz_ap
 * Home page Android
 <p float="left">
   <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/home_page.png" width="350" />
+  <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/home_page_ios.png" width="350" />
 </p>
 
 * Next forecast page Android
 <p float="left">
   <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/next_forecast_page.png" width="350" />
+  <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/next_forecast_page_ios.png" width="350" />
 </p>
 
 * Forecast detail page Android
 <p float="left">
   <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/forecasts_details_page.png" width="350" />
+  <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/forecasts_details_page_ios.png" width="350" />
 </p>
 
 * Feedback page Android
 <p float="left">
   <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/feedback_page.png" width="350" />
+  <img src="https://github.com/fonsecguilherme/nobuzz_app/blob/master/screenshots/feedback_page_ios.png" width="350" />
 </p>
