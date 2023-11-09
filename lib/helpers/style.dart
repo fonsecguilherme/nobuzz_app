@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Style {
+  //App background decoration
   static BoxDecoration appBackground() => const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -16,6 +17,19 @@ class Style {
           fit: BoxFit.cover,
           opacity: 0.2,
         ),
+      );
+
+  //Container gradient decoration
+  static BoxDecoration containerDecoration() => const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFF957DCD),
+            Color(0xFF523D7F),
+          ],
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(20)),
       );
 
   //App bar text style
@@ -90,7 +104,7 @@ class Style {
   );
 
   //Feedback page text style
-   static TextStyle conditionFeedbackPageText = const TextStyle(
+  static TextStyle conditionFeedbackPageText = const TextStyle(
     color: Colors.white,
     fontSize: 16,
     fontWeight: FontWeight.w500,

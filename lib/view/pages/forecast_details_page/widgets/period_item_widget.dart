@@ -25,19 +25,7 @@ class PeriodItemWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             height: 155,
             width: 115,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFF957DCD),
-                  Color(0xFF523D7F),
-                ],
-              ),
-              borderRadius: BorderRadius.all(
-                Radius.circular(20),
-              ),
-            ),
+            decoration: Style.containerDecoration(),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -26,17 +26,7 @@ class _CitiesBuilderState extends State<CitiesBuilder> {
           child: GestureDetector(
             child: Container(
               height: 90,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xFF957DCD),
-                    Color(0xFF523D7F),
-                  ],
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-              ),
+              decoration: Style.containerDecoration(),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

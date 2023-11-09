@@ -25,17 +25,7 @@ class BottomCarouselWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Container(
             padding: const EdgeInsets.all(8.0),
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFF957DCD),
-                  Color(0xFF523D7F),
-                ],
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-            ),
+            decoration: Style.containerDecoration(),
             height: 50,
             width: 156,
             child: Row(
