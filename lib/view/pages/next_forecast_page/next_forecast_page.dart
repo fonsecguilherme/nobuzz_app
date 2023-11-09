@@ -21,7 +21,10 @@ class NextForecastsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text('7 dias'),
+        title: Text(
+          '7 dias',
+          style: Style.appbarText,
+        ),
         centerTitle: true,
       ),
       body: Container(
@@ -35,59 +38,18 @@ class NextForecastsPage extends StatelessWidget {
               ),
               Text(
                 Functions.weekDay(),
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
+                style: Style.weekdayText,
               ),
               Flexible(
                 flex: 4,
-                child: TodayBannerWidget(temp: temp, condition: condition),
+                child: TodayBannerWidget(
+                  temp: temp,
+                  condition: condition,
+                ),
               ),
               Flexible(
                 flex: 6,
-                child: ListView(
-                  padding: const EdgeInsets.only(
-                    bottom: 8.0,
-                  ),
-                  children: [
-                    ListViewItemWidget(
-                      weekday: Functions.weekdayOrder()[0],
-                      day: days![0].segunda!,
-                      stateName: stateName,
-                    ),
-                    ListViewItemWidget(
-                      weekday: Functions.weekdayOrder()[1],
-                      day: days![0].terca!,
-                      stateName: stateName,
-                    ),
-                    ListViewItemWidget(
-                      weekday: Functions.weekdayOrder()[2],
-                      day: days![0].quarta!,
-                      stateName: stateName,
-                    ),
-                    ListViewItemWidget(
-                      weekday: Functions.weekdayOrder()[3],
-                      day: days![0].quinta!,
-                      stateName: stateName,
-                    ),
-                    ListViewItemWidget(
-                      weekday: Functions.weekdayOrder()[4],
-                      day: days![0].sexta!,
-                      stateName: stateName,
-                    ),
-                    ListViewItemWidget(
-                      weekday: Functions.weekdayOrder()[5],
-                      day: days![0].sabado!,
-                      stateName: stateName,
-                    ),
-                    ListViewItemWidget(
-                      weekday: Functions.weekdayOrder()[6],
-                      day: days![0].domingo!,
-                      stateName: stateName,
-                    ),
-                  ],
-                ),
+                child: _listViewForecasts(),
               ),
             ],
           ),
@@ -95,4 +57,47 @@ class NextForecastsPage extends StatelessWidget {
       ),
     );
   }
+
+  Widget _listViewForecasts() => ListView(
+        padding: const EdgeInsets.only(
+          bottom: 8.0,
+        ),
+        children: [
+          ListViewItemWidget(
+            weekday: Functions.weekdayOrder()[0],
+            day: days![0].segunda!,
+            stateName: stateName,
+          ),
+          ListViewItemWidget(
+            weekday: Functions.weekdayOrder()[1],
+            day: days![0].terca!,
+            stateName: stateName,
+          ),
+          ListViewItemWidget(
+            weekday: Functions.weekdayOrder()[2],
+            day: days![0].quarta!,
+            stateName: stateName,
+          ),
+          ListViewItemWidget(
+            weekday: Functions.weekdayOrder()[3],
+            day: days![0].quinta!,
+            stateName: stateName,
+          ),
+          ListViewItemWidget(
+            weekday: Functions.weekdayOrder()[4],
+            day: days![0].sexta!,
+            stateName: stateName,
+          ),
+          ListViewItemWidget(
+            weekday: Functions.weekdayOrder()[5],
+            day: days![0].sabado!,
+            stateName: stateName,
+          ),
+          ListViewItemWidget(
+            weekday: Functions.weekdayOrder()[6],
+            day: days![0].domingo!,
+            stateName: stateName,
+          ),
+        ],
+      );
 }

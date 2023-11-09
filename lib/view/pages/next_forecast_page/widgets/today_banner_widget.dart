@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 
 class TodayBannerWidget extends StatelessWidget {
   final String temp;
@@ -38,11 +39,7 @@ class TodayBannerWidget extends StatelessWidget {
               ),
               Text(
                 '$temp°',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 55,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: Style.bannerTemperatureText,
               ),
             ],
           ),

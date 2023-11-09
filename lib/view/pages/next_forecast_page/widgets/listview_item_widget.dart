@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nobuzz_app/core/providers/weather_provider.dart';
 import 'package:nobuzz_app/helpers/functions.dart';
+import 'package:nobuzz_app/helpers/style.dart';
 import 'package:nobuzz_app/model/weather_model.dart';
 import 'package:nobuzz_app/view/pages/forecast_details_page/forecast_details_page.dart';
 import 'package:provider/provider.dart';
@@ -26,11 +27,7 @@ class ListViewItemWidget extends StatelessWidget {
               flex: 1,
               child: Text(
                 weekday,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.normal,
-                ),
+                style: Style.weekDayListViewText,
               ),
             ),
             Flexible(
@@ -43,16 +40,15 @@ class ListViewItemWidget extends StatelessWidget {
                     width: 55,
                     height: 50,
                     child: Image.asset(
-                      Functions.imageWeather(day[0].manha![0].tempo),
+                      Functions.imageWeather(
+                        day[0].manha![0].tempo,
+                      ),
                     ),
                   ),
                   Text(
                     day[0].manha![0].tempo ?? 'Indisponível',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  )
+                    style: Style.conditionListViewText,
+                  ),
                 ],
               ),
             ),
@@ -60,10 +56,7 @@ class ListViewItemWidget extends StatelessWidget {
               flex: 1,
               child: Text(
                 '${day[0].manha![0].graus}°',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
+                style: Style.temperatureListViewText,
               ),
             )
           ],
